@@ -14,7 +14,6 @@ for article in bangla_paper.articles:
         if (len(article.tags) > 0) :
             print ('Tags :\n' + str(article.tags) + '\n')
 
-        break
     except Exception :
         print(Exception)
 
