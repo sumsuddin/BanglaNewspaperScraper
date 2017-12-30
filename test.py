@@ -1,6 +1,10 @@
 import newspaper
+from newspaper import Source
 
-bangla_paper = newspaper.build('http://www.prothomalo.com/')
+url = 'http://www.prothomalo.com/'
+bangla_paper = Source(url, memoize_articles=False, number_threads=20)
+bangla_paper.build()
+print (bangla_paper.size())
 
 for article in bangla_paper.articles:
 
@@ -13,6 +17,8 @@ for article in bangla_paper.articles:
 
         if (len(article.tags) > 0) :
             print ('Tags :\n' + str(article.tags) + '\n')
+        else :
+            print('Tags :\n{}\n')
 
     except Exception :
         print(Exception)

@@ -78,26 +78,22 @@ A Glance:
 
     >>> import newspaper
 
-    >>> cnn_paper = newspaper.build('http://cnn.com')
+    >>> bangla_paper = newspaper.build('http://www.prothomalo.com/')
 
-    >>> for article in cnn_paper.articles:
+    >>> for article in bangla_paper.articles:
     >>>     print(article.url)
-    http://www.cnn.com/2013/11/27/justice/tucson-arizona-captive-girls/
-    http://www.cnn.com/2013/12/11/us/texas-teen-dwi-wreck/index.html
+    http://www.prothomalo.com/bangladesh/article?tags=83
+    http://www.prothom-alo.com/video/article
     ...
 
-    >>> for category in cnn_paper.category_urls():
+    >>> for category in bangla_paper.category_urls():
     >>>     print(category)
-
-    http://lifestyle.cnn.com
-    http://cnn.com/world
-    http://tech.cnn.com
     ...
 
-    >>> cnn_article = cnn_paper.articles[0]
-    >>> cnn_article.download()
-    >>> cnn_article.parse()
-    >>> cnn_article.nlp()
+    >>> bn_article = bangla_paper.articles[0]
+    >>> bn_article.download()
+    >>> bn_article.parse()
+    >>> bn_article.nlp()
     ...
 
 .. code-block:: pycon
@@ -193,6 +189,7 @@ Features
     input code      full name
 
       ar              Arabic
+      bn              Bangla
       ru              Russian
       nl              Dutch
       de              German
